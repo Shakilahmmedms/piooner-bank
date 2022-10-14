@@ -69,8 +69,8 @@
             transactionArea.style.display = "block";
         });
         // deposite button click handler
-        const depositeBtn = document.getElementById("deposite-btn").addEventListener("click", function(){
-           const depositeNumber = getInputNumber("depositeAmount");
+            const depositeBtn = document.getElementById("deposite-btn").addEventListener("click", function(){
+            const depositeNumber = getInputNumber("depositeAmount");
             updateSpanText("current-deposite",depositeNumber);
             //for balance add
             updateSpanText("current-balance",depositeNumber);
@@ -78,14 +78,15 @@
         });
 
         //Withdraw button event handler
-        const withdrawBtn = document.getElementById("withdraw-btn").addEventListener("click",function(){
-            const withdrawInNum =getInputNumber("withdraw-amount"); 
+            const withdrawBtn = document.getElementById("withdraw-btn").addEventListener("click",function(){
+            const withdrawInNum = getInputNumber("withdraw-amount"); 
             updateSpanText("totalwithdraw",withdrawInNum);
+            updateSpanText("current-balance",-1 * withdrawInNum);
             document.getElementById("withdraw-amount").value = "";
         });
 
         // golobal funciton
-        function getInputNumber(id){
+            function getInputNumber(id){
             const Amount = document.getElementById(id).value;
             const AmountNumber = parseFloat(Amount);
             return AmountNumber;
